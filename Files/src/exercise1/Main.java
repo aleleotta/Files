@@ -1,10 +1,19 @@
 package exercise1;
+import java.io.*;
 import java.util.*;
 
 public class Main{
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		sc.close();
+		Scanner sc = null;
+		try {
+			sc = new Scanner(new FileReader("C:\\Users\\aleleotta\\Desktop\\IES Nervion\\PROG\\Files\\Random Double Numbers"));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			sc.close();
+		}
+		//C:\Users\aleleotta\Desktop\IES Nervion\PROG\Files
+		
 	}
 }
 
