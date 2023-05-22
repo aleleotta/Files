@@ -1,10 +1,9 @@
 package exercise1;
 import java.io.*;
-import java.util.*;
 
 public class Main{
 	public static void main(String[] args) {
-		
+		BufferedReader read = new BufferedReader(new FileReader("C:\\Users\\aleleotta\\Desktop\\IES Nervion\\PROG\\Files"));
 	}
 }
 
