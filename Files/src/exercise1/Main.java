@@ -3,9 +3,20 @@ import java.io.*;
 
 public class Main{
 	public static void main(String[] args) {
-		BufferedReader read = new BufferedReader(new FileReader("C:\\Users\\aleleotta\\Desktop\\IES Nervion\\PROG\\Files"));
+		BufferedReader read = null;
+		try {
+			read = new BufferedReader(new FileReader("C:\\Users\\aleleotta\\Desktop\\IES Nervion\\PROG\\Files"));
+		} catch (FileNotFoundException err) {
+			err.printStackTrace();
+		} finally {
+			try {
+				read.close();
+			} catch (IOException err) {
+				err.printStackTrace();
+			}
+		}
 	}
-}
+}				
 
 /*
 Crea con un editor el fichero de texto NumerosReales.txt en la carpeta del proyecto.
