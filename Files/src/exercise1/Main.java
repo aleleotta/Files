@@ -5,8 +5,11 @@ public class Main{
 	public static void main(String[] args) {
 		BufferedReader read = null;
 		try {
-			read = new BufferedReader(new FileReader("C:\\Users\\aleleotta\\Desktop\\IES Nervion\\PROG\\Files"));
+			read = new BufferedReader(new FileReader("C:\\Users\\aleleotta\\Desktop\\IES Nervion\\PROG\\Files\\Random_double_numbers.txt"));
+			System.out.println(read.readLine());
 		} catch (FileNotFoundException err) {
+			err.printStackTrace();
+		} catch (IOException err) {
 			err.printStackTrace();
 		} finally {
 			try {
