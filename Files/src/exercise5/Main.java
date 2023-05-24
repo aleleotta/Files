@@ -1,9 +1,39 @@
 package exercise5;
+import java.io.*;
 import java.util.*;
 
 public class Main{
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		FileWriter writer = null;
+		Scanner reader = null;
+		try {
+			reader = new Scanner(new FileReader("src\\files\\data.txt"));
+			if(reader.hasNext()) {
+				writer = new FileWriter("src\\files\\data.txt", true);
+			} else {
+				writer = new FileWriter("src\\files\\data.txt");
+			}
+			String name = "";
+			int age = 0;
+			System.out.print("Please introduce your full name: ");
+			name = sc.nextLine();
+			System.out.print("Please introduce your age: ");
+			age = sc.nextInt();
+			writer.write("Name: " + name + "\nAge: " + age);
+			writer.flush();
+		} catch (IOException err) {
+			System.out.println("Something has gone wrong!");
+			err.getMessage();
+		} finally {
+			try {
+				writer.close();
+				reader.close();
+			} catch (IOException err) {
+				System.out.println("An error has occured when releasing resources.");
+				err.getMessage();
+			}
+		}
 		sc.close();
 	}
 }

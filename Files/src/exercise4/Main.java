@@ -19,7 +19,7 @@ public class Main{
 				}
 			}
 		} catch (IOException err) {
-			System.out.println("An exception has been thrown.");
+			System.out.println("Something has gone wrong!");
 			err.getMessage();
 		} finally {
 			try {
