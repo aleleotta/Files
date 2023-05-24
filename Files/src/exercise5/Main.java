@@ -8,11 +8,11 @@ public class Main{
 		FileWriter writer = null;
 		Scanner reader = null;
 		try {
-			reader = new Scanner(new FileReader("src\\files\\data.txt"));
+			reader = new Scanner(new FileReader("src\\files\\Data.txt"));
 			if(reader.hasNext()) {
-				writer = new FileWriter("src\\files\\data.txt", true);
+				writer = new FileWriter("src\\files\\Data.txt", true);
 			} else {
-				writer = new FileWriter("src\\files\\data.txt");
+				writer = new FileWriter("src\\files\\Data.txt");
 			}
 			String name = "";
 			int age = 0;
