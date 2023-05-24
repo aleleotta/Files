@@ -1,10 +1,32 @@
 package exercise2;
 import java.util.*;
+import java.io.*;
 
 public class Main{
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		sc.close();
+		Scanner read = null;
+		try {
+			read = new Scanner(new FileReader("src\\files\\Integers.txt"));
+			int sum = 0;
+			double average = 0;
+			int counter = 0;
+			while(read.hasNext()) {
+				int num = read.nextInt();
+				System.out.print(num + " ");
+				sum = sum + num;
+				counter++;
+			}
+			average = sum / counter;
+			System.out.println("\n\nSum = " + sum);
+			System.out.println("Average = " + average);
+		} catch (FileNotFoundException err) {
+			System.out.println("\"Random_double_numbers\"" + " is missing!");
+			System.out.println(err.getMessage());
+		} finally {
+			if(read != null) {
+				read.close();
+			}
+		}
 	}
 }
 
