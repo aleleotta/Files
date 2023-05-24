@@ -5,10 +5,25 @@ import java.io.*;
 public class Main{
 	public static void main(String[] args) {
 		Scanner sc = null;
+		Student per;
+		ArrayList<Student> studentList = new ArrayList<Student>();
 		try {
 			sc = new Scanner(new FileReader("src\\files\\Students.txt"));
+			String name = "";
+			int age = 0;
+			double height = 0;
+			int counter = 0;
+			while(sc.hasNextLine()) {
+				name = sc.next();
+				age = sc.nextInt();
+				height = sc.nextDouble();
+				per = new Student(name, age, height);
+				counter++;
+			}
 		} catch (FileNotFoundException err) {
 			err.getMessage();
+		} finally {
+			sc.close();
 		}
 	}
 }
