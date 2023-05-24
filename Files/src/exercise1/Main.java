@@ -1,21 +1,30 @@
 package exercise1;
+import java.util.*;
 import java.io.*;
 
 public class Main{
 	public static void main(String[] args) {
-		BufferedReader read = null;
+		Scanner read = null;
 		try {
-			read = new BufferedReader(new FileReader("C:\\Users\\aleleotta\\Desktop\\IES Nervion\\PROG\\Files\\Random_double_numbers.txt"));
-			System.out.println(read.readLine());
+			read = new Scanner(new FileReader("src\\files\\Random_double_numbers.txt"));
+			int sum = 0;
+			double average = 0;
+			int counter = 0;
+			while(read.hasNext()) {
+				int num = read.nextInt();
+				System.out.print(num + " ");
+				sum = sum + num;
+				counter++;
+			}
+			average = sum / counter;
+			System.out.println("\n\nSum = " + sum);
+			System.out.println("Average = " + average);
 		} catch (FileNotFoundException err) {
-			err.printStackTrace();
-		} catch (IOException err) {
-			err.printStackTrace();
+			System.out.println("\"Random_double_numbers\"" + " is missing!");
+			System.out.println(err.getMessage());
 		} finally {
-			try {
+			if(read != null) {
 				read.close();
-			} catch (IOException err) {
-				err.printStackTrace();
 			}
 		}
 	}
