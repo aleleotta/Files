@@ -7,3 +7,8 @@ public class Main{
 		sc.close();
 	}
 }
+
+/*
+Escribe un texto en un archivo de texto, línea a línea leídas de teclado,
+hasta que se introduzca la cadena “fin”.
+*/
