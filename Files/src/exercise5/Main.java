@@ -11,6 +11,7 @@ public class Main{
 			reader = new Scanner(new FileReader("src\\files\\Data.txt"));
 			if(reader.hasNext()) {
 				writer = new FileWriter("src\\files\\Data.txt", true);
+				writer.write("\n\n");
 			} else {
 				writer = new FileWriter("src\\files\\Data.txt");
 			}
